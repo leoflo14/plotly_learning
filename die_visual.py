@@ -8,17 +8,10 @@ from die import Die
 die = Die()
 
 # Моделирование серии бросков с сохранением результатов в списке.
-results = []
-for roll_num in range(1000):
-    result = die.roll()
-    results.append(result)
-# print(results)
+results = [die.roll() for _ in range(1000)]
 
 # Анализ результатов.
-frequencies = []
-for value in range(1, die.num_sides + 1):
-    frequency = results.count(value)
-    frequencies.append(frequency)
+frequencies = [results.count(value) for value in range(1, die.num_sides + 1)]
 
 # Визуализация результатов.
 x_values = list(range(1, die.num_sides + 1))
